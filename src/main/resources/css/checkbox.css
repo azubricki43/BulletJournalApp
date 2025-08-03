@@ -1,0 +1,134 @@
+.custom-checkbox {
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-padding: 3px;
+    -fx-background-color: transparent;
+}
+
+.custom-checkbox .box {
+    -fx-background-color: white;
+    -fx-border-color: #fadcd9;
+    -fx-border-width: 1;
+    -fx-padding: 3;
+}
+
+.custom-checkbox:selected .box {
+    -fx-background-color: #fadcd9;
+    -fx-border-color: #fadcd9;
+}
+
+.custom-checkbox:selected .text{
+    -fx-strikethrough: true;
+}
+
+.round-button {
+    -fx-background-radius: 5em;
+    -fx-min-width: 10px;
+    -fx-max-width: 10px;
+    -fx-min-height: 10px;
+    -fx-max-height: 10px;
+}
+
+.list-view {
+    -fx-background-color: #f8afa6;
+}
+
+.list-cell {
+    -fx-background-color: #f8afa6;
+}
+
+.list-cell:selected {
+    -fx-background-color: #fadcd9;
+}
+
+.icon-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+    -fx-pref-width: 40px;
+    -fx-pref-height: 40px;
+}
+
+.event-label {
+    -fx-background-color: #f8afa6;
+    -fx-font-family: "Book Antiqua";
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+    -fx-background-radius: 15px;
+    -fx-padding: 5px 10px;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-control-inner-background: transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.event-label-dailyView {
+    -fx-font-family: "Book Antiqua";
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.event-week-dailyView {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.event-num-dailyView{
+    -fx-font-weight: bold;
+    -fx-font-size: 21px;
+    -fx-text-fill: white;
+}
+
+.number-label {
+    -fx-background-color: #f8afa6;
+    -fx-font-family: "System";
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-text-fill: white;
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+    -fx-background-radius: 7px;
+    -fx-padding: 3px 7px;
+}
+
+.event-popup-vbox {
+    -fx-background-color: #fadcd9;
+    -fx-padding: 10px;
+    -fx-background-radius: 7px;
+}
+
+.event-popup-label {
+    -fx-font-family: "System";
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-text-fill: black;
+}
+
+.event-popup-button {
+    -fx-background-color: #f8afa6;
+}
+
+.custom-text-area:focused .content {
+    -fx-background-color: #fadcd9;
+}
+
+.custom-text-area .content {
+    -fx-background-color: #fadcd9;
+}
+
+.monthly-event {
+    -fx-font-family: "Book Antiqua";
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+}

@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" style="-fx-background-image: url(&quot;file:src/main/resources/images/BulletJournalBackground.png&quot;);; -fx-background-repeat: no-repeat;; -fx-background-size: cover;;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="journal.bulletjournaljavafx.DailyView">
+   <top>
+      <VBox BorderPane.alignment="TOP_LEFT">
+         <BorderPane.margin>
+            <Insets left="20.0" top="30.0" />
+         </BorderPane.margin>
+         <children>
+            <Label fx:id="journalNameLabel" prefHeight="58.0" prefWidth="720.0" text="#####'s Journal">
+               <font>
+                  <Font name="Lucida Handwriting Italic" size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </top>
+   <left>
+      <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="319.0" prefWidth="303.0" BorderPane.alignment="TOP_CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="223.0" minHeight="0.0" prefHeight="39.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="434.0" minHeight="10.0" prefHeight="234.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <GridPane>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="83.0" minWidth="10.0" prefWidth="46.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="149.0" minWidth="10.0" prefWidth="149.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label fx:id="dateLabel" text="June 3rd, 2025" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Book Antiqua" size="19.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="leftButton" mnemonicParsing="false" onAction="#setLeftButton" text="&lt;" />
+                  <Button fx:id="rightButton" mnemonicParsing="false" onAction="#setRightButton" text="&gt;" GridPane.columnIndex="2" />
+               </children>
+            </GridPane>
+            <VBox prefHeight="244.0" prefWidth="283.0" GridPane.rowIndex="1">
+               <children>
+                  <Label text="To-Do">
+                     <opaqueInsets>
+                        <Insets left="20.0" />
+                     </opaqueInsets>
+                     <font>
+                        <Font name="Bodoni MT" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                  </Label>
+                  <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="244.0" prefWidth="283.0" style="-fx-background-color: #f8afa6;">
+                     <children>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TextField fx:id="taskTextField" prefHeight="25.0" prefWidth="189.0" promptText="Enter a new task" style="-fx-background-color: #fcffe8;">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <GridPane.margin>
+                                    <Insets top="2.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <Button fx:id="addTaskButton" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addTask" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: #fadcd9;" text="Add Task" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                           </children>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </GridPane>
+                        <ScrollPane fx:id="dailyToDoPane" prefHeight="192.0" prefWidth="283.0" style="-fx-background-color: transparent;">
+                           <content>
+                              <VBox fx:id="todoVBox" prefHeight="190.0" prefWidth="281.0" style="-fx-background-color: #f8afa6;">
+                                 <padding>
+                                    <Insets top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </GridPane>
+   </left>
+   <bottom>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="32.0" prefWidth="154.0" text="Habit Tracker">
+               <opaqueInsets>
+                  <Insets left="20.0" />
+               </opaqueInsets>
+               <font>
+                  <Font name="Bodoni MT" size="18.0" />
+               </font>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </Label>
+            <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="163.0" prefWidth="285.0" style="-fx-background-color: #f8afa6;">
+               <children>
+                  <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="283.0">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="537.0" minWidth="10.0" prefWidth="169.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="856.0" minWidth="10.0" prefWidth="73.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <TextField fx:id="habitTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="189.0" promptText="Enter a new habit" style="-fx-background-color: #fcffe8;" GridPane.halignment="CENTER">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </TextField>
+                        <Button fx:id="addHabitButton" mnemonicParsing="false" onAction="#addHabit" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: #fadcd9;" text="Add Habit" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                     </children>
+                  </GridPane>
+                  <ScrollPane fx:id="habitTrackerScrollPane" prefHeight="128.0" prefWidth="285.0" style="-fx-background-color: transparent;">
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                     <content>
+                        <VBox fx:id="habitVBox" prefHeight="118.0" prefWidth="285.0" style="-fx-background-color: #f8afa6;">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="20.0" />
+         </padding>
+      </VBox>
+   </bottom>
+   <right>
+      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="276.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" spacing="10.0" style="-fx-background-color: #fadcd9;">
+               <children>
+                  <Label fx:id="smallCalenderLabel" text="Label">
+                     <font>
+                        <Font name="Bodoni MT" size="18.0" />
+                     </font>
+                  </Label>
+                  <GridPane fx:id="calenderPane" alignment="CENTER" prefHeight="170.0" prefWidth="214.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="10.0" top="5.0" />
+               </padding>
+            </VBox>
+            <HBox alignment="CENTER" prefHeight="54.0" prefWidth="236.0" spacing="10.0">
+               <children>
+                  <Button fx:id="weeklyViewButton" alignment="CENTER" mnemonicParsing="false" onAction="#switchWeeklyView" prefHeight="35.0" prefWidth="103.0" style="-fx-background-color: #fadcd9;" text="Weekly View" />
+                  <Button mnemonicParsing="false" onAction="#switchMonthlyView" prefHeight="36.0" prefWidth="105.0" style="-fx-background-color: #fadcd9;" text="Monthly View" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+            <VBox alignment="CENTER" prefHeight="273.0" prefWidth="246.0" style="-fx-background-color: #f8afa6;">
+               <children>
+                  <Label text="Upcoming Events" textFill="WHITE">
+                     <opaqueInsets>
+                        <Insets left="20.0" />
+                     </opaqueInsets>
+                     <font>
+                        <Font name="Book Antiqua Bold" size="24.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                  </Label>
+                  <ScrollPane prefHeight="196.0" prefWidth="283.0" styleClass="&quot;scroll-pane&quot;">
+                     <content>
+                        <VBox fx:id="eventVBox" prefHeight="193.0" prefWidth="233.0" spacing="5.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="20.0" right="20.0" top="150.0" />
+         </padding>
+      </VBox>
+   </right>
+   <center>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="705.0" prefWidth="430.0" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Daily Entry">
+               <opaqueInsets>
+                  <Insets left="20.0" />
+               </opaqueInsets>
+               <font>
+                  <Font name="Bodoni MT" size="18.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="dailyEntryTextArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="425.0" prefWidth="430.0" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" top="250.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>
